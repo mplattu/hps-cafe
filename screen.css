@@ -1,0 +1,24 @@
+body {
+  font-family: Arial,Helvetica,sans-serif;
+  background-color: green;
+  color: white;
+}
+
+h1 {
+  text-align: center;
+}
+
+table {
+  margin-left: auto;
+  margin-right: auto;
+  border-collapse: collapse;
+}
+
+td {
+  padding: 5px;
+}
+
+.today {
+  background: white;
+  color: green;
+}
