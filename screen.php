@@ -48,15 +48,19 @@ function get_calendar_html ($event_arr) {
   $html = '<table>';
 
   foreach ($event_arr as $this_event) {
+    $this_date = "";
+    $this_rest = $this_event;
+
     if (preg_match('/(.+) \((.+) klo/', $this_event, $matches)) {
-      $this_event = $matches[2].': '.$matches[1];
+      $this_date = $matches[2];
+      $this_rest = $matches[1];
     }
 
     if (preg_match('/'.$today_human.'/', $this_event)) {
-      $html .= '<tr><td class="today">Tänään:<br/>'.$this_event.'</td></tr>';
+      $html .= '<tr><td class="today">Tänään: '.$this_rest.'</td></tr>';
     }
     else {
-      $html .= '<tr><td>'.$this_event.'</td></tr>';
+      $html .= '<tr><td>'.$this_date.': '.$this_rest.'</td></tr>';
     }
   }
 

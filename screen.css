@@ -21,4 +21,5 @@ td {
 .today {
   background: white;
   color: green;
+  border-radius: 5px;
 }
