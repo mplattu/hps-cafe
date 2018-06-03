@@ -40,10 +40,15 @@ $open_nextweek = get_one_calendar($query_array);
 
 echo(get_calendar_html(array_merge($open_now, $open_nextweek)));
 
+?>
+</body>
+</html>
+
+<?php
 exit();
 
 function get_calendar_html ($event_arr) {
-  $today_human = date('d.n.Y');
+  $today_human = date('j.n.Y');
 
   $html = '<table>';
 
