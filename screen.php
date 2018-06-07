@@ -56,12 +56,12 @@ function get_calendar_html ($event_arr) {
     $this_date = "";
     $this_rest = $this_event;
 
-    if (preg_match('/(.+) \((.+) klo/', $this_event, $matches)) {
+    if (preg_match('/(.+) \(([\d\.]+)[ \)]/', $this_event, $matches)) {
       $this_date = $matches[2];
       $this_rest = $matches[1];
     }
 
-    if (preg_match('/'.$today_human.'/', $this_event)) {
+    if ($today_human == $this_date) {
       $html .= '<tr><td class="today">Tänään: '.$this_rest.'</td></tr>';
     }
     else {
